@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		E989972A21970C15003E77C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989972921970C15003E77C7 /* AppDelegate.swift */; };
-		E989972C21970C15003E77C7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989972B21970C15003E77C7 /* ViewController.swift */; };
 		E989972F21970C15003E77C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E989972D21970C15003E77C7 /* Main.storyboard */; };
 		E989973121970C17003E77C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E989973021970C17003E77C7 /* Assets.xcassets */; };
 		E989973421970C17003E77C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E989973221970C17003E77C7 /* LaunchScreen.storyboard */; };
+		E989973C219856EA003E77C7 /* ProjectListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989973B219856EA003E77C7 /* ProjectListTVC.swift */; };
+		E989973F21985733003E77C7 /* ProjectListTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989973D21985733003E77C7 /* ProjectListTVCell.swift */; };
+		E989974021985733003E77C7 /* ProjectListTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E989973E21985733003E77C7 /* ProjectListTVCell.xib */; };
+		E98997422198638E003E77C7 /* CreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98997412198638E003E77C7 /* CreateProjectViewController.swift */; };
+		E98997442198716B003E77C7 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98997432198716B003E77C7 /* Project.swift */; };
+		E98997462198B03D003E77C7 /* EditProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98997452198B03D003E77C7 /* EditProjectViewController.swift */; };
+		E98997482198BDE8003E77C7 /* ProjectTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98997472198BDE8003E77C7 /* ProjectTimeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E989972621970C15003E77C7 /* time_tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = time_tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E989972921970C15003E77C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E989972B21970C15003E77C7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E989972E21970C15003E77C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E989973021970C17003E77C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E989973321970C17003E77C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E989973521970C17003E77C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E989973B219856EA003E77C7 /* ProjectListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListTVC.swift; sourceTree = "<group>"; };
+		E989973D21985733003E77C7 /* ProjectListTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListTVCell.swift; sourceTree = "<group>"; };
+		E989973E21985733003E77C7 /* ProjectListTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectListTVCell.xib; sourceTree = "<group>"; };
+		E98997412198638E003E77C7 /* CreateProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectViewController.swift; sourceTree = "<group>"; };
+		E98997432198716B003E77C7 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		E98997452198B03D003E77C7 /* EditProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectViewController.swift; sourceTree = "<group>"; };
+		E98997472198BDE8003E77C7 /* ProjectTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +67,17 @@
 			isa = PBXGroup;
 			children = (
 				E989972921970C15003E77C7 /* AppDelegate.swift */,
-				E989972B21970C15003E77C7 /* ViewController.swift */,
 				E989972D21970C15003E77C7 /* Main.storyboard */,
 				E989973021970C17003E77C7 /* Assets.xcassets */,
 				E989973221970C17003E77C7 /* LaunchScreen.storyboard */,
 				E989973521970C17003E77C7 /* Info.plist */,
+				E989973B219856EA003E77C7 /* ProjectListTVC.swift */,
+				E989973D21985733003E77C7 /* ProjectListTVCell.swift */,
+				E989973E21985733003E77C7 /* ProjectListTVCell.xib */,
+				E98997412198638E003E77C7 /* CreateProjectViewController.swift */,
+				E98997432198716B003E77C7 /* Project.swift */,
+				E98997452198B03D003E77C7 /* EditProjectViewController.swift */,
+				E98997472198BDE8003E77C7 /* ProjectTimeVC.swift */,
 			);
 			path = time_tracker;
 			sourceTree = "<group>";
@@ -125,6 +143,7 @@
 				E989973421970C17003E77C7 /* LaunchScreen.storyboard in Resources */,
 				E989973121970C17003E77C7 /* Assets.xcassets in Resources */,
 				E989972F21970C15003E77C7 /* Main.storyboard in Resources */,
+				E989974021985733003E77C7 /* ProjectListTVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +154,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E989972C21970C15003E77C7 /* ViewController.swift in Sources */,
 				E989972A21970C15003E77C7 /* AppDelegate.swift in Sources */,
+				E989973F21985733003E77C7 /* ProjectListTVCell.swift in Sources */,
+				E98997422198638E003E77C7 /* CreateProjectViewController.swift in Sources */,
+				E98997442198716B003E77C7 /* Project.swift in Sources */,
+				E98997462198B03D003E77C7 /* EditProjectViewController.swift in Sources */,
+				E98997482198BDE8003E77C7 /* ProjectTimeVC.swift in Sources */,
+				E989973C219856EA003E77C7 /* ProjectListTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
