@@ -18,6 +18,10 @@
 		E98997442198716B003E77C7 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98997432198716B003E77C7 /* Project.swift */; };
 		E98997462198B03D003E77C7 /* EditProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98997452198B03D003E77C7 /* EditProjectViewController.swift */; };
 		E98997482198BDE8003E77C7 /* ProjectTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98997472198BDE8003E77C7 /* ProjectTimeVC.swift */; };
+		E989974A219B68CF003E77C7 /* CreateNewTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9899749219B68CF003E77C7 /* CreateNewTaskVC.swift */; };
+		E989974E219DFCAE003E77C7 /* SFMono-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E989974B219DFC99003E77C7 /* SFMono-Bold.otf */; };
+		E989974F219DFCB1003E77C7 /* SFMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E989974C219DFC99003E77C7 /* SFMono-Regular.otf */; };
+		E9899750219DFCB3003E77C7 /* SFMono-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E989974D219DFC99003E77C7 /* SFMono-Semibold.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		E98997432198716B003E77C7 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
 		E98997452198B03D003E77C7 /* EditProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectViewController.swift; sourceTree = "<group>"; };
 		E98997472198BDE8003E77C7 /* ProjectTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeVC.swift; sourceTree = "<group>"; };
+		E9899749219B68CF003E77C7 /* CreateNewTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTaskVC.swift; sourceTree = "<group>"; };
+		E989974B219DFC99003E77C7 /* SFMono-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Bold.otf"; sourceTree = "<group>"; };
+		E989974C219DFC99003E77C7 /* SFMono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Regular.otf"; sourceTree = "<group>"; };
+		E989974D219DFC99003E77C7 /* SFMono-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Semibold.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,9 @@
 		E989972821970C15003E77C7 /* time_tracker */ = {
 			isa = PBXGroup;
 			children = (
+				E989974B219DFC99003E77C7 /* SFMono-Bold.otf */,
+				E989974C219DFC99003E77C7 /* SFMono-Regular.otf */,
+				E989974D219DFC99003E77C7 /* SFMono-Semibold.otf */,
 				E989972921970C15003E77C7 /* AppDelegate.swift */,
 				E989972D21970C15003E77C7 /* Main.storyboard */,
 				E989973021970C17003E77C7 /* Assets.xcassets */,
@@ -78,6 +89,7 @@
 				E98997432198716B003E77C7 /* Project.swift */,
 				E98997452198B03D003E77C7 /* EditProjectViewController.swift */,
 				E98997472198BDE8003E77C7 /* ProjectTimeVC.swift */,
+				E9899749219B68CF003E77C7 /* CreateNewTaskVC.swift */,
 			);
 			path = time_tracker;
 			sourceTree = "<group>";
@@ -140,9 +152,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E989974F219DFCB1003E77C7 /* SFMono-Regular.otf in Resources */,
+				E989974E219DFCAE003E77C7 /* SFMono-Bold.otf in Resources */,
 				E989973421970C17003E77C7 /* LaunchScreen.storyboard in Resources */,
 				E989973121970C17003E77C7 /* Assets.xcassets in Resources */,
 				E989972F21970C15003E77C7 /* Main.storyboard in Resources */,
+				E9899750219DFCB3003E77C7 /* SFMono-Semibold.otf in Resources */,
 				E989974021985733003E77C7 /* ProjectListTVCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -156,6 +171,7 @@
 			files = (
 				E989972A21970C15003E77C7 /* AppDelegate.swift in Sources */,
 				E989973F21985733003E77C7 /* ProjectListTVCell.swift in Sources */,
+				E989974A219B68CF003E77C7 /* CreateNewTaskVC.swift in Sources */,
 				E98997422198638E003E77C7 /* CreateProjectViewController.swift in Sources */,
 				E98997442198716B003E77C7 /* Project.swift in Sources */,
 				E98997462198B03D003E77C7 /* EditProjectViewController.swift in Sources */,

@@ -19,8 +19,14 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название проекта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4y-5E-qrY">
+                        <rect key="frame" x="18" y="11" width="228" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00:00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71b-bU-zJk">
-                        <rect key="frame" x="245" y="14" width="65" height="16"/>
+                        <rect key="frame" x="245" y="14" width="65" height="15.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="65" id="w1h-lS-WF7"/>
                         </constraints>
@@ -29,18 +35,12 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bbh-o2-wWc">
-                        <rect key="frame" x="0.0" y="0.0" width="10" height="43.5"/>
+                        <rect key="frame" x="0.0" y="1" width="10" height="42"/>
                         <color key="backgroundColor" red="0.97647058819999999" green="0.23529411759999999" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="10" id="xuD-lD-YwW"/>
                         </constraints>
                     </view>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название проекта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4y-5E-qrY">
-                        <rect key="frame" x="18" y="11" width="228" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstAttribute="bottom" secondItem="bbh-o2-wWc" secondAttribute="bottom" id="57T-X4-cfp"/>
@@ -51,7 +51,7 @@
                     <constraint firstItem="x4y-5E-qrY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="ssp-cT-8hw"/>
                     <constraint firstAttribute="bottom" secondItem="71b-bU-zJk" secondAttribute="bottom" constant="14" id="t0x-aJ-ees"/>
                     <constraint firstItem="71b-bU-zJk" firstAttribute="leading" secondItem="x4y-5E-qrY" secondAttribute="trailing" constant="-1" id="up0-Xv-k83"/>
-                    <constraint firstItem="bbh-o2-wWc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="wYq-7r-c47"/>
+                    <constraint firstItem="bbh-o2-wWc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="1" id="wYq-7r-c47"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>

@@ -16,6 +16,11 @@ class ProjectListTVC: UITableViewController, CreateProjectViewControllerDelegate
 	
 	func addNewProject(name: Project) {
 		projectList.append(name)
+		print(name.red)
+		print(name.green)
+		print(name.blue)
+		print(name.alpha)
+		view.layoutIfNeeded()
 		tableView.reloadData()
 	}
 	
@@ -39,7 +44,7 @@ class ProjectListTVC: UITableViewController, CreateProjectViewControllerDelegate
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! ProjectListTVCell
 		let projects = projectList[indexPath.row]
 		cell.projectName.text = projects.title
-		cell.colorProject.backgroundColor = UIColor(red: CGFloat(projects.red), green: CGFloat(projects.green), blue: CGFloat(projects.blue), alpha: CGFloat(projects.alpha))
+		cell.colorProject.backgroundColor = UIColor(red: projects.red, green: projects.green, blue: projects.blue, alpha: projects.alpha)
 		return cell
 	}
 	
@@ -78,20 +83,7 @@ class ProjectListTVC: UITableViewController, CreateProjectViewControllerDelegate
 	}
 
 	override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-		switch indexPath.row {
-		case 0:
-			performSegue(withIdentifier: "goToTaskTimer", sender: self)
-		default:
-			break
-		}
-	}
-	
-	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "showAllInformationOfRestaurant" {
-			if let indexPath = tableView.indexPathForSelectedRow {
-				let destionationController = segue.destination as! ProjectTimeVC
-			}
-		}
+		performSegue(withIdentifier: "goToAddNewTask", sender: self)
 	}
 	
 	/*

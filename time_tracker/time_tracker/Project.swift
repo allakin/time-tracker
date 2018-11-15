@@ -11,8 +11,12 @@ import UIKit
 
 struct Project {
 	var title: String
-	var red: Double
-	var green: Double
-	var blue: Double
-	var alpha: Double
+	var red: CGFloat
+	var green: CGFloat
+	var blue: CGFloat
+	var alpha: CGFloat
+}
+
+struct NewTask {
+	var taskName: String
 }

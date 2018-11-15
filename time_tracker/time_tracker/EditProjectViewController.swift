@@ -75,9 +75,9 @@ class EditProjectViewController: UIViewController {
 		titleLabel.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
 		view.addSubview(editNameProjectTextFiled)
 		editNameProjectTextFiled.topAnchor.constraint(equalTo: titleLabel.topAnchor, constant: 50).isActive = true
-		editNameProjectTextFiled.widthAnchor.constraint(equalToConstant: 300).isActive = true
+		editNameProjectTextFiled.leftAnchor.constraint(equalTo: view.leftAnchor, constant: 20).isActive = true
+		editNameProjectTextFiled.rightAnchor.constraint(equalTo: view.rightAnchor, constant: -20).isActive = true
 		editNameProjectTextFiled.heightAnchor.constraint(equalToConstant: 50).isActive = true
-		editNameProjectTextFiled.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 		view.addSubview(addNewProject)
 		addNewProject.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
 		addNewProject.widthAnchor.constraint(equalToConstant: 200).isActive = true
