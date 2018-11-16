@@ -18,7 +18,7 @@
         <!--Project TimeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ProjectTimeVC" customModule="time_tracker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ProjectTimeVC" customModule="time_tracker" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -169,7 +169,6 @@
                                 </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="newTaskButton:" destination="BoB-O2-Rp9" eventType="touchUpInside" id="k5o-wu-ZvR"/>
-                                    <segue destination="BYZ-38-t0r" kind="show" identifier="goToTimer" id="CxX-eu-tRs"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Прошлые задачи" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lrl-SV-08t">
@@ -215,6 +214,7 @@
                     </view>
                     <connections>
                         <outlet property="newTaskTextField" destination="CTu-rA-Is9" id="iIC-fu-f5L"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToTimer" id="qPM-du-7dl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fyh-Vs-GZo" userLabel="First Responder" sceneMemberID="firstResponder"/>

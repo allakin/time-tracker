@@ -52,7 +52,6 @@ class CreateProjectViewController: UIViewController, UITextFieldDelegate {
 	
 	let cancelButton: UIButton = {
 		let button = UIButton()
-//		button.backgroundColor = UIColor(red:0.94, green:0.12, blue:0.35, alpha:1.00)
 		button.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
 		button.layer.cornerRadius = 25
 		button.setImage(UIImage(named: "close"), for: .normal)
