@@ -18,5 +18,10 @@ struct Project {
 }
 
 struct NewTask {
-	var taskName: String
+	var taskName : String
 }
+struct Time {
+	var timerCount: String
+}
+
+

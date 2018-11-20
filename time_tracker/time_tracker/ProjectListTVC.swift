@@ -67,6 +67,9 @@ class ProjectListTVC: UITableViewController, CreateProjectViewControllerDelegate
 			// delete item at indexPath
 			self.projectList.remove(at: indexPath.row)
 			tableView.deleteRows(at: [indexPath], with: .fade)
+			if self.projectList.isEmpty {
+				self.createProjectName()
+			}
 		}
 		
 		let edit = UITableViewRowAction(style: .default, title: "Изменить") { (action, indexPath) in

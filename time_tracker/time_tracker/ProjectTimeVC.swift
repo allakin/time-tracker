@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol ProjectTimeVCDelegate {
+	func reloadTime(time: Time)
+}
+
 class ProjectTimeVC: UIViewController {
 	
 	@IBOutlet weak var taskName: UILabel!
@@ -15,13 +19,15 @@ class ProjectTimeVC: UIViewController {
 	@IBOutlet weak var startButton: UIButton!
 	@IBOutlet weak var stopButton: UIButton!
 	
-	var task: NewTask?
+	var task = ""
 	var timer = Timer()
 	var time = 0
+	var timeFinal = ""
+	var delegate:	ProjectTimeVCDelegate!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		taskName.text = task?.taskName
+		taskName.text = task
 	}
 	
 	@IBAction func startPauseButtonTaped(_ sender: Any) {
@@ -47,9 +53,16 @@ class ProjectTimeVC: UIViewController {
 		let secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
 		
 		timeCount.text = "\(hoursString):\(minutesString):\(secondsString)"
+		timeFinal = "\(hoursString):\(minutesString):\(secondsString)"
+		
 	}
 	
 	@IBAction func stopButtonTaped(_ sender: Any) {
+		dismiss(animated: true) {
+			self.timer.invalidate()
+			let finalTime = Time(timerCount: self.timeFinal)
+			self.delegate.reloadTime(time: finalTime)
+		}
 		print("stoped")
 	}
 	
