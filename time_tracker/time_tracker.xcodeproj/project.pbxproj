@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E9657C9E21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9657C9C21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodeld */; };
+		E9657CA021A4885200B2D6EE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9657C9F21A4885200B2D6EE /* CoreDataManager.swift */; };
 		E989972A21970C15003E77C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989972921970C15003E77C7 /* AppDelegate.swift */; };
 		E989972F21970C15003E77C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E989972D21970C15003E77C7 /* Main.storyboard */; };
 		E989973121970C17003E77C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E989973021970C17003E77C7 /* Assets.xcassets */; };
@@ -25,6 +27,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E9657C9D21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = time_trackerDataModel.xcdatamodel; sourceTree = "<group>"; };
+		E9657C9F21A4885200B2D6EE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		E989972621970C15003E77C7 /* time_tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = time_tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E989972921970C15003E77C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E989972E21970C15003E77C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -90,6 +94,8 @@
 				E98997452198B03D003E77C7 /* EditProjectViewController.swift */,
 				E98997472198BDE8003E77C7 /* ProjectTimeVC.swift */,
 				E9899749219B68CF003E77C7 /* CreateNewTaskVC.swift */,
+				E9657C9C21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodeld */,
+				E9657C9F21A4885200B2D6EE /* CoreDataManager.swift */,
 			);
 			path = time_tracker;
 			sourceTree = "<group>";
@@ -171,11 +177,13 @@
 			files = (
 				E989972A21970C15003E77C7 /* AppDelegate.swift in Sources */,
 				E989973F21985733003E77C7 /* ProjectListTVCell.swift in Sources */,
+				E9657C9E21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodeld in Sources */,
 				E989974A219B68CF003E77C7 /* CreateNewTaskVC.swift in Sources */,
 				E98997422198638E003E77C7 /* CreateProjectViewController.swift in Sources */,
 				E98997442198716B003E77C7 /* Project.swift in Sources */,
 				E98997462198B03D003E77C7 /* EditProjectViewController.swift in Sources */,
 				E98997482198BDE8003E77C7 /* ProjectTimeVC.swift in Sources */,
+				E9657CA021A4885200B2D6EE /* CoreDataManager.swift in Sources */,
 				E989973C219856EA003E77C7 /* ProjectListTVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -376,6 +384,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E9657C9C21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E9657C9D21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodel */,
+			);
+			currentVersion = E9657C9D21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodel */;
+			path = time_trackerDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = E989971E21970C15003E77C7 /* Project object */;
 }

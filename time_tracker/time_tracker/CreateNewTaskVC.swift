@@ -8,26 +8,29 @@
 
 import UIKit
 import Foundation
+import CoreData
 
 class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSource, ProjectTimeVCDelegate {
 	
-	func reloadTime(time: Time) {
-//		let row = timeList.index(of: time)
-//		let reloadIndexPath = IndexPath(row: row!, section: 0)
-//		lastTasks.reloadRows(at: [reloadIndexPath], with: .automatic)
+	func reloadTime(time: TasksList) {
+		print(time.time)
+		let row = taskList.firstIndex(of: time)
+		let indexPosition = IndexPath(row: row!, section: 0)
+		lastTasks.reloadRows(at: [indexPosition], with: .automatic)
 	}
 	
 	
 	@IBOutlet weak var newTaskTextField: UITextField!
 	@IBOutlet weak var lastTasks: UITableView!
 	
-	var taskList = [NewTask]()
-	var timeList = [Time]()
+	var tasksNameList: ProjectsList?
+	var taskList = [TasksList]()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		lastTasks.delegate = self
 		lastTasks.dataSource = self
+		fetchRequest()
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -36,18 +39,17 @@ class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-		cell.textLabel?.text = taskList[indexPath.row].taskName
-		cell.detailTextLabel?.text = timeList[indexPath.row].timerCount
+		let tasks = taskList[indexPath.row]
+		cell.textLabel?.text = tasks.name
+		cell.detailTextLabel?.text = tasks.time
+		
 		return cell
 	}
 	
 	@IBAction func newTaskButton(_ sender: Any) {
-		guard let tasks = newTaskTextField.text else {return}
-		let task2 = NewTask(taskName: tasks)
-		let time = Time(timerCount: "Приступить к задаче")
-		taskList.append(task2)
-		timeList.append(time)
-		lastTasks.reloadData()
+		guard let tasksName = newTaskTextField.text else {return}
+		CoreDataManager.shared.createNewTask(name: tasksName, project: tasksNameList!)
+		fetchRequest()
 		newTaskTextField.text = ""
 	}
 	
@@ -55,11 +57,17 @@ class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 		performSegue(withIdentifier: "goToTimer", sender: self)
 	}
 	
+	func fetchRequest() {
+		guard let project = tasksNameList?.tasksList?.allObjects as? [TasksList]  else {return}
+		taskList = project
+		lastTasks.reloadData()
+	}
+	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "goToTimer" {
 			if let indexPath = lastTasks.indexPathForSelectedRow {
 				let destionationController = segue.destination as! ProjectTimeVC
-				destionationController.task = taskList[indexPath.row].taskName
+				destionationController.task = taskList[indexPath.row]
 				destionationController.delegate = self
 			}
 		}

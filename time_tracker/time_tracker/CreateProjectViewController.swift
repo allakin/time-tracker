@@ -7,17 +7,18 @@
 //
 
 import UIKit
+import CoreData
 
 protocol CreateProjectViewControllerDelegate {
-	func addNewProject(name: Project)
+	func addNewProject(name: ProjectsList)
 }
 
 class CreateProjectViewController: UIViewController, UITextFieldDelegate {
 	
 	var delegate: CreateProjectViewControllerDelegate?
-	var redColor: CGFloat = 0.94
-	var greenColor: CGFloat = 0.12
-	var blueColor: CGFloat = 0.35
+	var redColor: Double = 0.94
+	var greenColor: Double = 0.12
+	var blueColor: Double = 0.35
 	
 	let titleLabel: UILabel = {
 		let text = UILabel()
@@ -222,11 +223,12 @@ button.addTarget(self, action: #selector(color3Clicked), for: .touchUpInside)
 		print("change color")
 	}
 	
+	//TODO: - Доделать сохранение
 	@objc private func buttonClicked() {
 		dismiss(animated: true) {
 			guard let text = self.nameProjectTextFiled.text else {return}
-			let project = Project(title: text, red: self.redColor, green: self.greenColor, blue: self.blueColor, alpha: 1.00)
-			self.delegate?.addNewProject(name: project)
+			let newProject = CoreDataManager.shared.createNewProject(projectName: text, red: self.redColor, green: self.greenColor, blue: self.blueColor)
+			self.delegate?.addNewProject(name: newProject.0!)
 		}
 	}
 	

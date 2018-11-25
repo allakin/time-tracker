@@ -7,9 +7,10 @@
 //
 
 import UIKit
+import CoreData
 
 protocol ProjectTimeVCDelegate {
-	func reloadTime(time: Time)
+	func reloadTime(time: TasksList)
 }
 
 class ProjectTimeVC: UIViewController {
@@ -19,7 +20,7 @@ class ProjectTimeVC: UIViewController {
 	@IBOutlet weak var startButton: UIButton!
 	@IBOutlet weak var stopButton: UIButton!
 	
-	var task = ""
+	var task: TasksList?
 	var timer = Timer()
 	var time = 0
 	var timeFinal = ""
@@ -27,7 +28,7 @@ class ProjectTimeVC: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		taskName.text = task
+		taskName.text = task?.name
 	}
 	
 	@IBAction func startPauseButtonTaped(_ sender: Any) {
@@ -60,10 +61,19 @@ class ProjectTimeVC: UIViewController {
 	@IBAction func stopButtonTaped(_ sender: Any) {
 		dismiss(animated: true) {
 			self.timer.invalidate()
-			let finalTime = Time(timerCount: self.timeFinal)
-			self.delegate.reloadTime(time: finalTime)
+			self.saveTime(time: self.timeFinal)
+			self.delegate.reloadTime(time: self.task!)
 		}
 		print("stoped")
+	}
+	
+	func saveTime(time: String) {
+		let context = CoreDataManager.shared.persistentContainer.viewContext
+		task?.time = time
+		do {
+			try context.save()
+		} catch {
+		}
 	}
 	
 }
