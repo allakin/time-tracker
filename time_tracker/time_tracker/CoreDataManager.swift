@@ -28,6 +28,7 @@ struct CoreDataManager {
 		projectList.red = red
 		projectList.green = green
 		projectList.blue = blue
+		projectList.tasksCount = "\(0)"
 		do {
 			try context.save()
 			return (projectList, nil)

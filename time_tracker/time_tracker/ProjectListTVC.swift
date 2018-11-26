@@ -9,7 +9,18 @@
 import UIKit
 import CoreData
 
-class ProjectListTVC: UITableViewController, CreateProjectViewControllerDelegate {
+class ProjectListTVC: UITableViewController, CreateProjectViewControllerDelegate, CreateNewTaskVCDelegate, EditProjectViewControllerDelegate{
+	func editProject(name: ProjectsList) {
+		let row = projectListArray.index(of: name)
+		let reloadIndexPath = IndexPath(row: row!, section: 0)
+		tableView.reloadRows(at: [reloadIndexPath], with: .automatic)
+	}
+	
+	func taskCout(count: ProjectsList) {
+		let row = projectListArray.index(of: count)
+		let reloadIndex = IndexPath(row: row!, section: 0)
+		tableView.reloadRows(at: [reloadIndex], with: .automatic)
+	}
 	
 	func addNewProject(name: ProjectsList) {
 		projectListArray.append(name)
@@ -44,6 +55,7 @@ class ProjectListTVC: UITableViewController, CreateProjectViewControllerDelegate
 		let projects = projectListArray[indexPath.row]
 		cell.projectName.text = projects.name
 		cell.colorProject.backgroundColor = UIColor(red: CGFloat(projects.red), green: CGFloat(projects.green), blue: CGFloat(projects.blue), alpha: 1)
+		cell.totalTime.text = "Задач: \(projects.tasksCount!)"
 		return cell
 	}
 	
@@ -64,18 +76,30 @@ class ProjectListTVC: UITableViewController, CreateProjectViewControllerDelegate
 		
 		let delete = UITableViewRowAction(style: .destructive, title: "Удалить") { (action, indexPath) in
 			// delete item at indexPath
+			let projectList = self.projectListArray[indexPath.row]
+			
 			self.projectListArray.remove(at: indexPath.row)
-			tableView.deleteRows(at: [indexPath], with: .fade)
-			if self.projectListArray.isEmpty {
-				self.createProjectName()
+			self.tableView.deleteRows(at: [indexPath], with: .automatic)
+			
+			// delete the company from Core Data
+			let context = CoreDataManager.shared.persistentContainer.viewContext
+			
+			context.delete(projectList)
+			
+			do {
+				try context.save()
+				if self.projectListArray.isEmpty {
+					self.createProjectName()
+				}
+			} catch let saveErr {
+				print("Failed to delete company:", saveErr)
 			}
 		}
 		
 		let edit = UITableViewRowAction(style: .default, title: "Изменить") { (action, indexPath) in
 			let editProjectViewController = EditProjectViewController()
-			let test = self.projectListArray[indexPath.row]
-//			editProjectViewController.delegate = self
-//			editProjectViewController.projects = test.title
+			editProjectViewController.delegate = self
+			editProjectViewController.taskEditName = self.projectListArray[indexPath.row]
 			self.present(editProjectViewController, animated: true, completion: nil)
 			print("share")
 		}
@@ -93,6 +117,7 @@ class ProjectListTVC: UITableViewController, CreateProjectViewControllerDelegate
 			if let indexPath = tableView.indexPathForSelectedRow {
 				let destination = segue.destination as! CreateNewTaskVC
 				destination.tasksNameList = projectListArray[indexPath.row]
+				destination.delegate = self
 			}
 		}
 	}

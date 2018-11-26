@@ -10,6 +10,10 @@ import UIKit
 import Foundation
 import CoreData
 
+protocol CreateNewTaskVCDelegate {
+	func taskCout(count: ProjectsList)
+}
+
 class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSource, ProjectTimeVCDelegate {
 	
 	func reloadTime(time: TasksList) {
@@ -25,6 +29,7 @@ class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 	
 	var tasksNameList: ProjectsList?
 	var taskList = [TasksList]()
+	var delegate: CreateNewTaskVCDelegate?
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -47,10 +52,13 @@ class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 	}
 	
 	@IBAction func newTaskButton(_ sender: Any) {
-		guard let tasksName = newTaskTextField.text else {return}
-		CoreDataManager.shared.createNewTask(name: tasksName, project: tasksNameList!)
-		fetchRequest()
-		newTaskTextField.text = ""
+		if newTaskTextField.text != "" {
+			guard let tasksName = newTaskTextField.text else {return}
+			CoreDataManager.shared.createNewTask(name: tasksName, project: tasksNameList!)
+			fetchRequest()
+			saveTaskCount()
+			newTaskTextField.text = ""
+		}
 	}
 	
 	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -61,6 +69,17 @@ class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 		guard let project = tasksNameList?.tasksList?.allObjects as? [TasksList]  else {return}
 		taskList = project
 		lastTasks.reloadData()
+	}
+	
+	func saveTaskCount() {
+		let context = CoreDataManager.shared.persistentContainer.viewContext
+		tasksNameList?.tasksCount = "\(taskList.count)"
+		do {
+			try context.save()
+			delegate?.taskCout(count: tasksNameList!)
+		} catch {
+			print(error.localizedDescription)
+		}
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

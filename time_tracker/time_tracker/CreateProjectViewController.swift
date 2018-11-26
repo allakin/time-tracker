@@ -223,12 +223,13 @@ button.addTarget(self, action: #selector(color3Clicked), for: .touchUpInside)
 		print("change color")
 	}
 	
-	//TODO: - Доделать сохранение
 	@objc private func buttonClicked() {
-		dismiss(animated: true) {
-			guard let text = self.nameProjectTextFiled.text else {return}
-			let newProject = CoreDataManager.shared.createNewProject(projectName: text, red: self.redColor, green: self.greenColor, blue: self.blueColor)
-			self.delegate?.addNewProject(name: newProject.0!)
+		if nameProjectTextFiled.text != "" {
+			dismiss(animated: true) {
+				guard let text = self.nameProjectTextFiled.text else {return}
+				let newProject = CoreDataManager.shared.createNewProject(projectName: text, red: self.redColor, green: self.greenColor, blue: self.blueColor)
+				self.delegate?.addNewProject(name: newProject.0!)
+			}
 		}
 	}
 	

@@ -20,15 +20,15 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название проекта" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x4y-5E-qrY">
-                        <rect key="frame" x="18" y="11" width="228" height="21"/>
+                        <rect key="frame" x="18" y="11" width="212" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Кол-во задач" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="71b-bU-zJk">
-                        <rect key="frame" x="245" y="14" width="65" height="15.5"/>
+                        <rect key="frame" x="228" y="14" width="82" height="16"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="65" id="w1h-lS-WF7"/>
+                            <constraint firstAttribute="width" constant="82" id="w1h-lS-WF7"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" red="0.97647058819999999" green="0.23529411759999999" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -50,7 +50,7 @@
                     <constraint firstItem="x4y-5E-qrY" firstAttribute="leading" secondItem="bbh-o2-wWc" secondAttribute="trailing" constant="8" id="jCk-yw-MMx"/>
                     <constraint firstItem="x4y-5E-qrY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="11" id="ssp-cT-8hw"/>
                     <constraint firstAttribute="bottom" secondItem="71b-bU-zJk" secondAttribute="bottom" constant="14" id="t0x-aJ-ees"/>
-                    <constraint firstItem="71b-bU-zJk" firstAttribute="leading" secondItem="x4y-5E-qrY" secondAttribute="trailing" constant="-1" id="up0-Xv-k83"/>
+                    <constraint firstItem="71b-bU-zJk" firstAttribute="leading" secondItem="x4y-5E-qrY" secondAttribute="trailing" constant="-2" id="up0-Xv-k83"/>
                     <constraint firstItem="bbh-o2-wWc" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="1" id="wYq-7r-c47"/>
                 </constraints>
             </tableViewCellContentView>
