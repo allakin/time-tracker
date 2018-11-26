@@ -231,8 +231,7 @@ class EditProjectViewController: UIViewController {
 		color8.layer.borderColor = UIColor.black.cgColor
 		print("change color")
 	}
-	
-	//TODO: - Доделать сохранение
+
 	@objc private func buttonClicked() {
 		guard let text = nameProjectTextFiled.text else {return}
 		let context = CoreDataManager.shared.persistentContainer.viewContext

@@ -10,6 +10,12 @@ import UIKit
 import CoreData
 
 class ProjectListTVC: UITableViewController, CreateProjectViewControllerDelegate, CreateNewTaskVCDelegate, EditProjectViewControllerDelegate{
+	func editTaskCout(count: ProjectsList) {
+		let row = projectListArray.index(of: count)
+		let reloadIndex = IndexPath(row: row!, section: 0)
+		tableView.reloadRows(at: [reloadIndex], with: .automatic)
+	}
+	
 	func editProject(name: ProjectsList) {
 		let row = projectListArray.index(of: name)
 		let reloadIndexPath = IndexPath(row: row!, section: 0)

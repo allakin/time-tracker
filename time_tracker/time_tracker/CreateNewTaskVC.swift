@@ -12,12 +12,12 @@ import CoreData
 
 protocol CreateNewTaskVCDelegate {
 	func taskCout(count: ProjectsList)
+	func editTaskCout(count: ProjectsList)
 }
 
 class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSource, ProjectTimeVCDelegate {
 	
 	func reloadTime(time: TasksList) {
-		print(time.time)
 		let row = taskList.firstIndex(of: time)
 		let indexPosition = IndexPath(row: row!, section: 0)
 		lastTasks.reloadRows(at: [indexPosition], with: .automatic)
@@ -90,6 +90,31 @@ class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 				destionationController.delegate = self
 			}
 		}
+	}
+	
+	func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+		
+		let delete = UITableViewRowAction(style: .destructive, title: "Удалить") { (action, indexPath) in
+			// delete item at indexPath
+			let tasksList = self.taskList[indexPath.row]
+			
+			self.taskList.remove(at: indexPath.row)
+			self.lastTasks.deleteRows(at: [indexPath], with: .automatic)
+			
+			// delete the company from Core Data
+			let context = CoreDataManager.shared.persistentContainer.viewContext
+			
+			context.delete(tasksList)
+			self.tasksNameList?.tasksCount = "\(self.taskList.count)"
+			
+			do {
+				try context.save()
+				self.delegate?.editTaskCout(count: self.tasksNameList!)
+			} catch let saveErr {
+				print("Failed to delete company:", saveErr)
+			}
+		}
+		return [delete]
 	}
 	
 }
