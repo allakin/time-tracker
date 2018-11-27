@@ -23,8 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название задачи" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0J-7Q-Pga">
-                                <rect key="frame" x="20" y="200" width="280" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Название задачи" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P0J-7Q-Pga">
+                                <rect key="frame" x="20" y="200" width="280" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -71,12 +71,32 @@
                                     <action selector="startPauseButtonTaped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cjI-xn-MHC"/>
                                 </connections>
                             </button>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" showsTouchWhenHighlighted="YES" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zhW-GA-tHJ">
+                                <rect key="frame" x="80" y="438" width="50" height="50"/>
+                                <color key="backgroundColor" red="0.97647058819999999" green="0.23529411759999999" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="mJu-fc-1T6"/>
+                                    <constraint firstAttribute="width" constant="50" id="vTD-9c-tLg"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="13" minY="11" maxX="12" maxY="11"/>
+                                <state key="normal" image="pause"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="25"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="pauseButtonTaped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ju-HO-P5n"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="qi6-xJ-sBh" firstAttribute="leading" secondItem="zhW-GA-tHJ" secondAttribute="trailing" constant="60" id="0DP-to-T1v"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qi6-xJ-sBh" secondAttribute="bottom" constant="80" id="7Ip-II-Kht"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NFj-bs-VhR" secondAttribute="bottom" constant="80" id="A5Y-2q-URm"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4UY-a1-051" secondAttribute="trailing" constant="35" id="Hov-Dc-yyG"/>
+                            <constraint firstItem="zhW-GA-tHJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="JID-cc-7W4"/>
                             <constraint firstItem="P0J-7Q-Pga" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ldj-9H-Ydq"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="P0J-7Q-Pga" secondAttribute="trailing" constant="20" id="OHL-WS-IjP"/>
                             <constraint firstItem="qi6-xJ-sBh" firstAttribute="leading" secondItem="NFj-bs-VhR" secondAttribute="trailing" constant="60" id="OyJ-co-LBq"/>
@@ -84,12 +104,14 @@
                             <constraint firstItem="4UY-a1-051" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="36" id="Xvm-ke-wdc"/>
                             <constraint firstItem="P0J-7Q-Pga" firstAttribute="top" secondItem="4UY-a1-051" secondAttribute="bottom" constant="20" id="arA-eF-HEV"/>
                             <constraint firstItem="4UY-a1-051" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="fjS-5M-Yxk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zhW-GA-tHJ" secondAttribute="bottom" constant="80" id="igt-UF-XD8"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qi6-xJ-sBh" secondAttribute="trailing" constant="80" id="zeE-YY-BoS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="ArE-vf-5xT"/>
                     <connections>
+                        <outlet property="pauseButton" destination="zhW-GA-tHJ" id="oZg-5q-AOt"/>
                         <outlet property="startButton" destination="NFj-bs-VhR" id="fjU-HQ-AwW"/>
                         <outlet property="stopButton" destination="qi6-xJ-sBh" id="eeE-fa-93b"/>
                         <outlet property="taskName" destination="P0J-7Q-Pga" id="gbj-Na-J0G"/>
@@ -181,18 +203,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pf0-Tk-MtW">
-                                <rect key="frame" x="20" y="351" width="280" height="217"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pf0-Tk-MtW">
+                                <rect key="frame" x="0.0" y="351" width="320" height="217"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="N17-vq-IXY"/>
+                                    <constraint firstAttribute="width" constant="320" id="N17-vq-IXY"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Dyz-Bx-xxq" detailTextLabel="b2B-MQ-Mln" style="IBUITableViewCellStyleValue1" id="Pos-DG-W2g">
-                                        <rect key="frame" x="0.0" y="28" width="280" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Dyz-Bx-xxq" detailTextLabel="b2B-MQ-Mln" rowHeight="44" style="IBUITableViewCellStyleValue1" id="Pos-DG-W2g">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pos-DG-W2g" id="I1u-Tp-Uc0">
-                                            <rect key="frame" x="0.0" y="0.0" width="280" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dyz-Bx-xxq">
@@ -203,7 +225,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b2B-MQ-Mln">
-                                                    <rect key="frame" x="221" y="12" width="44" height="20.5"/>
+                                                    <rect key="frame" x="261" y="12" width="44" height="20.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -226,8 +248,8 @@
                             <constraint firstItem="WJl-lQ-Cc0" firstAttribute="trailing" secondItem="CTu-rA-Is9" secondAttribute="trailing" constant="20" id="n2R-Xp-tEr"/>
                             <constraint firstItem="Pf0-Tk-MtW" firstAttribute="bottom" secondItem="WJl-lQ-Cc0" secondAttribute="bottom" id="ouU-L5-ja6"/>
                             <constraint firstItem="Lrl-SV-08t" firstAttribute="top" secondItem="OfW-mN-OzP" secondAttribute="bottom" constant="80" id="qmj-fr-16p"/>
-                            <constraint firstItem="Pf0-Tk-MtW" firstAttribute="leading" secondItem="WJl-lQ-Cc0" secondAttribute="leading" constant="20" id="tsa-bI-sT4"/>
-                            <constraint firstItem="WJl-lQ-Cc0" firstAttribute="trailing" secondItem="Pf0-Tk-MtW" secondAttribute="trailing" constant="20" id="wRC-Qi-YT4"/>
+                            <constraint firstItem="Pf0-Tk-MtW" firstAttribute="leading" secondItem="WJl-lQ-Cc0" secondAttribute="leading" id="tsa-bI-sT4"/>
+                            <constraint firstItem="WJl-lQ-Cc0" firstAttribute="trailing" secondItem="Pf0-Tk-MtW" secondAttribute="trailing" id="wRC-Qi-YT4"/>
                             <constraint firstItem="CTu-rA-Is9" firstAttribute="leading" secondItem="WJl-lQ-Cc0" secondAttribute="leading" constant="20" id="zFH-Tp-4VA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="WJl-lQ-Cc0"/>
@@ -262,6 +284,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="pause" width="48" height="58"/>
         <image name="play-button" width="50" height="56"/>
         <image name="stop" width="48" height="48"/>
     </resources>

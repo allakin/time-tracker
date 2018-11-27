@@ -19,26 +19,43 @@ class ProjectTimeVC: UIViewController {
 	@IBOutlet weak var timeCount: UILabel!
 	@IBOutlet weak var startButton: UIButton!
 	@IBOutlet weak var stopButton: UIButton!
+	@IBOutlet weak var pauseButton: UIButton!
 	
 	var task: TasksList?
 	var timer = Timer()
 	var time = 0
 	var timeFinal = ""
 	var delegate:	ProjectTimeVCDelegate!
+	var resumeTapped = false
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		taskName.text = task?.name
 	}
 	
-	@IBAction func startPauseButtonTaped(_ sender: Any) {
+	func runTimer() {
 		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTimer), userInfo: nil, repeats: true)
-		print("stared")
+	}
+	
+	@IBAction func startPauseButtonTaped(_ sender: Any) {
+		runTimer()
+		startButton.isHidden = true
+		pauseButton.isHidden = false
+		print("start")
 	}
 	
 	@objc func startTimer() {
 		time += 1
 		updateUI()
+	}
+	
+	@IBAction func pauseButtonTaped(_ sender: Any) {
+		if self.resumeTapped == false {
+			timer.invalidate()
+			startButton.isHidden = false
+			pauseButton.isHidden = true
+		}
+		print("pause")
 	}
 	
 	private func updateUI() {
@@ -61,7 +78,8 @@ class ProjectTimeVC: UIViewController {
 	@IBAction func stopButtonTaped(_ sender: Any) {
 		dismiss(animated: true) {
 			self.timer.invalidate()
-			self.saveTime(time: self.timeFinal)
+			self.time = 0
+			self.timeFinal != "" ? self.saveTime(time: self.timeFinal) : self.saveTime(time: "00:00:00")
 			self.delegate.reloadTime(time: self.task!)
 		}
 		print("stoped")
