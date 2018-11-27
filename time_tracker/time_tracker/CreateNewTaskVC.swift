@@ -36,6 +36,9 @@ class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 		lastTasks.delegate = self
 		lastTasks.dataSource = self
 		fetchRequest()
+		lastTasks.rowHeight = UITableView.automaticDimension
+		self.lastTasks.estimatedRowHeight = 44
+		self.lastTasks.rowHeight = UITableView.automaticDimension
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -43,11 +46,10 @@ class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 	}
 	
 	func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CreateNewTaskTVC
 		let tasks = taskList[indexPath.row]
-		cell.textLabel?.text = tasks.name
-		cell.detailTextLabel?.text = tasks.time
-		
+		cell.taskName.text = tasks.name
+		cell.taskTime.text = tasks.time
 		return cell
 	}
 	

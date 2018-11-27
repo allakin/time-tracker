@@ -37,6 +37,9 @@ class ProjectListTVC: UITableViewController, CreateProjectViewControllerDelegate
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		tableView.rowHeight = UITableView.automaticDimension
+		self.tableView.estimatedRowHeight = 44
+		self.tableView.rowHeight = UITableView.automaticDimension
 		tableView.register(UINib(nibName: "ProjectListTVCell", bundle: nil), forCellReuseIdentifier: "cell")
 		let context = CoreDataManager.shared.persistentContainer.viewContext
 		let fetchRequest = NSFetchRequest<ProjectsList>(entityName: "ProjectsList")

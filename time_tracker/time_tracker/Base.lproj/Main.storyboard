@@ -188,7 +188,7 @@
                                 </constraints>
                                 <color key="textColor" red="0.97647058819999999" green="0.23529411759999999" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="yes" textContentType="organization-title"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OfW-mN-OzP">
                                 <rect key="frame" x="20" y="192" width="280" height="50"/>
@@ -210,42 +210,56 @@
                                     <action selector="newTaskButton:" destination="BoB-O2-Rp9" eventType="touchUpInside" id="k5o-wu-ZvR"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Прошлые задачи" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lrl-SV-08t">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Задачи:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lrl-SV-08t">
                                 <rect key="frame" x="20" y="322" width="280" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pf0-Tk-MtW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pf0-Tk-MtW">
                                 <rect key="frame" x="0.0" y="351" width="320" height="217"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="320" id="N17-vq-IXY"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Dyz-Bx-xxq" detailTextLabel="b2B-MQ-Mln" rowHeight="44" style="IBUITableViewCellStyleValue1" id="Pos-DG-W2g">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="44" id="Pos-DG-W2g" customClass="CreateNewTaskTVC" customModule="time_tracker" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Pos-DG-W2g" id="I1u-Tp-Uc0">
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Dyz-Bx-xxq">
-                                                    <rect key="frame" x="15" y="12" width="33.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bdL-q5-IBi">
+                                                    <rect key="frame" x="15" y="12" width="184" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="b2B-MQ-Mln">
-                                                    <rect key="frame" x="261" y="12" width="44" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M3b-vM-wOc">
+                                                    <rect key="frame" x="207" y="12" width="98" height="21"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="98" id="F2V-ED-d5z"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="SFMono-Semibold" family="SF Mono" pointSize="17"/>
+                                                    <color key="textColor" red="0.97647058819999999" green="0.23529411759999999" blue="0.41568627450000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="M3b-vM-wOc" firstAttribute="top" secondItem="I1u-Tp-Uc0" secondAttribute="topMargin" constant="1" id="OnI-pg-IaJ"/>
+                                                <constraint firstItem="M3b-vM-wOc" firstAttribute="leading" secondItem="bdL-q5-IBi" secondAttribute="trailing" constant="8" id="SiJ-12-HTe"/>
+                                                <constraint firstAttribute="bottomMargin" relation="greaterThanOrEqual" secondItem="bdL-q5-IBi" secondAttribute="bottom" id="WxF-o3-buN"/>
+                                                <constraint firstItem="bdL-q5-IBi" firstAttribute="top" secondItem="I1u-Tp-Uc0" secondAttribute="topMargin" constant="1" id="edW-ut-fLX"/>
+                                                <constraint firstItem="bdL-q5-IBi" firstAttribute="leading" secondItem="I1u-Tp-Uc0" secondAttribute="leadingMargin" id="mkv-eE-b0Z"/>
+                                                <constraint firstItem="M3b-vM-wOc" firstAttribute="trailing" secondItem="I1u-Tp-Uc0" secondAttribute="trailingMargin" id="smE-m3-dsd"/>
+                                                <constraint firstItem="M3b-vM-wOc" firstAttribute="bottom" secondItem="I1u-Tp-Uc0" secondAttribute="bottomMargin" id="wJr-vg-spK"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="taskName" destination="bdL-q5-IBi" id="8TP-x0-h2k"/>
+                                            <outlet property="taskTime" destination="M3b-vM-wOc" id="xah-mT-nHm"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -270,7 +284,7 @@
                     <connections>
                         <outlet property="lastTasks" destination="Pf0-Tk-MtW" id="QBH-tC-XMD"/>
                         <outlet property="newTaskTextField" destination="CTu-rA-Is9" id="iIC-fu-f5L"/>
-                        <segue destination="BYZ-38-t0r" kind="modal" identifier="goToTimer" id="qPM-du-7dl"/>
+                        <segue destination="BYZ-38-t0r" kind="presentation" identifier="goToTimer" id="d25-1O-W8K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fyh-Vs-GZo" userLabel="First Responder" sceneMemberID="firstResponder"/>

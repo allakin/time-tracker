@@ -24,6 +24,7 @@
 		E989974E219DFCAE003E77C7 /* SFMono-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E989974B219DFC99003E77C7 /* SFMono-Bold.otf */; };
 		E989974F219DFCB1003E77C7 /* SFMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E989974C219DFC99003E77C7 /* SFMono-Regular.otf */; };
 		E9899750219DFCB3003E77C7 /* SFMono-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E989974D219DFC99003E77C7 /* SFMono-Semibold.otf */; };
+		E9D05AF621ADCAEB00DF1CBF /* CreateNewTaskTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D05AF421ADCAEB00DF1CBF /* CreateNewTaskTVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		E989974B219DFC99003E77C7 /* SFMono-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Bold.otf"; sourceTree = "<group>"; };
 		E989974C219DFC99003E77C7 /* SFMono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Regular.otf"; sourceTree = "<group>"; };
 		E989974D219DFC99003E77C7 /* SFMono-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Semibold.otf"; sourceTree = "<group>"; };
+		E9D05AF421ADCAEB00DF1CBF /* CreateNewTaskTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTaskTVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 				E9899749219B68CF003E77C7 /* CreateNewTaskVC.swift */,
 				E9657C9C21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodeld */,
 				E9657C9F21A4885200B2D6EE /* CoreDataManager.swift */,
+				E9D05AF421ADCAEB00DF1CBF /* CreateNewTaskTVC.swift */,
 			);
 			path = time_tracker;
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				E989972A21970C15003E77C7 /* AppDelegate.swift in Sources */,
 				E989973F21985733003E77C7 /* ProjectListTVCell.swift in Sources */,
 				E9657C9E21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodeld in Sources */,
+				E9D05AF621ADCAEB00DF1CBF /* CreateNewTaskTVC.swift in Sources */,
 				E989974A219B68CF003E77C7 /* CreateNewTaskVC.swift in Sources */,
 				E98997422198638E003E77C7 /* CreateProjectViewController.swift in Sources */,
 				E98997442198716B003E77C7 /* Project.swift in Sources */,
