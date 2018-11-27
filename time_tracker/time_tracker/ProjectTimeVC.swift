@@ -49,6 +49,10 @@ class ProjectTimeVC: UIViewController {
 		updateUI()
 	}
 	
+	@IBAction func cancelScreen(_ sender: Any) {
+		dismiss(animated: true, completion: nil)
+	}
+	
 	@IBAction func pauseButtonTaped(_ sender: Any) {
 		if self.resumeTapped == false {
 			timer.invalidate()

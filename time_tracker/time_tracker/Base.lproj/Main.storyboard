@@ -89,12 +89,25 @@
                                     <action selector="pauseButtonTaped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4ju-HO-P5n"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DJQ-he-Nca">
+                                <rect key="frame" x="20" y="40" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="BIz-RL-vX7"/>
+                                    <constraint firstAttribute="height" constant="20" id="gcM-oI-8v8"/>
+                                </constraints>
+                                <state key="normal" image="close"/>
+                                <connections>
+                                    <action selector="cancelScreen:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QBi-gm-04y"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="qi6-xJ-sBh" firstAttribute="leading" secondItem="zhW-GA-tHJ" secondAttribute="trailing" constant="60" id="0DP-to-T1v"/>
+                            <constraint firstItem="DJQ-he-Nca" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="5Nc-ee-U9a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="qi6-xJ-sBh" secondAttribute="bottom" constant="80" id="7Ip-II-Kht"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NFj-bs-VhR" secondAttribute="bottom" constant="80" id="A5Y-2q-URm"/>
+                            <constraint firstItem="DJQ-he-Nca" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="ErB-Ov-tsd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="4UY-a1-051" secondAttribute="trailing" constant="35" id="Hov-Dc-yyG"/>
                             <constraint firstItem="zhW-GA-tHJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="80" id="JID-cc-7W4"/>
                             <constraint firstItem="P0J-7Q-Pga" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Ldj-9H-Ydq"/>
@@ -203,7 +216,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pf0-Tk-MtW">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Pf0-Tk-MtW">
                                 <rect key="frame" x="0.0" y="351" width="320" height="217"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -284,6 +297,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="close" width="43" height="42"/>
         <image name="pause" width="48" height="58"/>
         <image name="play-button" width="50" height="56"/>
         <image name="stop" width="48" height="48"/>
