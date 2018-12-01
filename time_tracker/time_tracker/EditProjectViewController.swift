@@ -242,6 +242,7 @@ class EditProjectViewController: UIViewController {
 		do{
 			try context.save()
 			dismiss(animated: true) {
+				self.nameProjectTextFiled.resignFirstResponder()
 				self.delegate?.editProject(name: self.taskEditName!)
 			}
 		} catch {
@@ -313,7 +314,7 @@ class EditProjectViewController: UIViewController {
 		color8.widthAnchor.constraint(equalToConstant: 20).isActive = true
 		color8.heightAnchor.constraint(equalToConstant: 20).isActive = true
 		view.addSubview(addNewProject)
-		addNewProject.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+		addNewProject.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -300).isActive = true
 		addNewProject.widthAnchor.constraint(equalToConstant: 300).isActive = true
 		addNewProject.heightAnchor.constraint(equalToConstant: 50).isActive = true
 		addNewProject.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

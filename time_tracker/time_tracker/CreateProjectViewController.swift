@@ -227,6 +227,7 @@ button.addTarget(self, action: #selector(color3Clicked), for: .touchUpInside)
 		if nameProjectTextFiled.text != "" {
 			dismiss(animated: true) {
 				guard let text = self.nameProjectTextFiled.text else {return}
+				self.nameProjectTextFiled.resignFirstResponder()
 				let newProject = CoreDataManager.shared.createNewProject(projectName: text, red: self.redColor, green: self.greenColor, blue: self.blueColor)
 				self.delegate?.addNewProject(name: newProject.0!)
 			}
@@ -297,7 +298,7 @@ button.addTarget(self, action: #selector(color3Clicked), for: .touchUpInside)
 		color8.widthAnchor.constraint(equalToConstant: 20).isActive = true
 		color8.heightAnchor.constraint(equalToConstant: 20).isActive = true
 		view.addSubview(addNewProject)
-		addNewProject.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -50).isActive = true
+		addNewProject.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -300).isActive = true
 		addNewProject.widthAnchor.constraint(equalToConstant: 300).isActive = true
 		addNewProject.heightAnchor.constraint(equalToConstant: 50).isActive = true
 		addNewProject.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

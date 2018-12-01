@@ -60,6 +60,7 @@ class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 			fetchRequest()
 			saveTaskCount()
 			newTaskTextField.text = ""
+			self.newTaskTextField.endEditing(true)
 		}
 	}
 	

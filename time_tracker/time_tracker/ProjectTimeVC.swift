@@ -23,6 +23,12 @@ class ProjectTimeVC: UIViewController {
 	
 	var task: TasksList?
 	var timer = Timer()
+	var hrs = 0
+	var min = 0
+	var sec = 0
+	var diffHrs = 0
+	var diffMins = 0
+	var diffSecs = 0
 	var time = 0
 	var timeFinal = ""
 	var delegate:	ProjectTimeVCDelegate!
@@ -31,10 +37,12 @@ class ProjectTimeVC: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		taskName.text = task?.name
+		NotificationCenter.default.addObserver(self, selector: #selector(pauseWhenBackground(noti:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground(noti:)), name: UIApplication.willEnterForegroundNotification, object: nil)
 	}
 	
 	func runTimer() {
-		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTimer), userInfo: nil, repeats: true)
+		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTimer(t:)), userInfo: nil, repeats: true)
 	}
 	
 	@IBAction func startPauseButtonTaped(_ sender: Any) {
@@ -44,9 +52,46 @@ class ProjectTimeVC: UIViewController {
 		print("start")
 	}
 	
-	@objc func startTimer() {
-		time += 1
+	@objc func pauseWhenBackground(noti: Notification) {
+		self.timer.invalidate()
+		let shared = UserDefaults.standard
+		shared.set(Date(), forKey: "savedTime")
+	}
+	
+	@objc func startTimer(t: Timer) {
+		sec += 1
+//		if sec == 59 {
+//			min += 1
+//		} else if min == 60 {
+//			hrs += 1
+//			sec = 0
+//			min = 0
+//		}
+//		timeCount.text = String(format: "%02d : %02d : %02d", self.hrs, self.min, self.sec)
 		updateUI()
+	}
+	
+	@objc func willEnterForeground(noti: Notification) {
+		if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
+			(diffHrs, diffMins, diffSecs) = ProjectTimeVC.getTimeDifference(startDate: savedDate)
+			
+			refresh(hours: diffHrs, mins: diffMins, secs: diffSecs)
+		}
+	}
+	
+	static func getTimeDifference(startDate: Date) -> (Int, Int, Int) {
+		let calendar = Calendar.current
+		let components = calendar.dateComponents([.hour, .minute, .second], from: startDate, to: Date())
+		return(components.hour!, components.minute!, components.second!)
+	}
+	
+	func refresh (hours: Int, mins: Int, secs: Int) {
+		hrs += hours
+		min += mins
+		sec += secs
+		timeCount.text = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
+		runTimer()
+		
 	}
 	
 	@IBAction func cancelScreen(_ sender: Any) {
@@ -62,20 +107,34 @@ class ProjectTimeVC: UIViewController {
 		print("pause")
 	}
 	
+	func removeSavedDate() {
+		if (UserDefaults.standard.object(forKey: "savedTime") as? Date) != nil {
+			UserDefaults.standard.removeObject(forKey: "savedTime")
+		}
+	}
+	
 	private func updateUI() {
-		var seconds: Int
-		var minutes: Int
-		var hours: Int
-		hours = time/(60*60)
-		minutes = (time/60) % 60
-		seconds = time % 60
+//		var seconds: Int
+//		var minutes: Int
+//		var hours: Int
+//		hrs = time/(60*60)
+//		min = (time/60) % 60
+//		sec = time % 60
+		if sec == 60 {
+			min += 1
+			sec = 0
+		} else if min == 60 {
+			sec = 0
+			min = 0
+			hrs += 1
+		}
 		
-		let hoursString = hours > 9 ? "\(hours)" : "0\(hours)"
-		let minutesString = minutes > 9 ? "\(minutes)" : "0\(minutes)"
-		let secondsString = seconds > 9 ? "\(seconds)" : "0\(seconds)"
+//		let hoursString = hrs > 9 ? "\(hrs)" : "0\(hrs)"
+//		let minutesString = min > 9 ? "\(min)" : "0\(min)"
+//		let secondsString = sec > 9 ? "\(sec)" : "0\(sec)"
 		
-		timeCount.text = "\(hoursString):\(minutesString):\(secondsString)"
-		timeFinal = "\(hoursString):\(minutesString):\(secondsString)"
+		timeCount.text = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
+		timeFinal = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
 		
 	}
 	
@@ -96,6 +155,10 @@ class ProjectTimeVC: UIViewController {
 			try context.save()
 		} catch {
 		}
+	}
+	
+	func countString(time: Int) -> String {
+		return time > 9 ? "\(time)" : "0\(time)"
 	}
 	
 }
