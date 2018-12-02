@@ -71,7 +71,7 @@ class CreateProjectViewController: UIViewController, UITextFieldDelegate {
 		text.translatesAutoresizingMaskIntoConstraints = false
 		return text
 	}()
-	
+
 	let color1: UIButton = {
 		let button = UIButton()
 		button.backgroundColor = UIColor(red:0.85, green:0.07, blue:0.48, alpha:1.00)
@@ -148,6 +148,7 @@ button.addTarget(self, action: #selector(color3Clicked), for: .touchUpInside)
 		super.viewDidLoad()
 		view.backgroundColor = .white
 		nameProjectTextFiled.delegate = self
+		hideKeyboardWhenTappedAround()
 		setingUI()
 	}
 	
@@ -298,10 +299,23 @@ button.addTarget(self, action: #selector(color3Clicked), for: .touchUpInside)
 		color8.widthAnchor.constraint(equalToConstant: 20).isActive = true
 		color8.heightAnchor.constraint(equalToConstant: 20).isActive = true
 		view.addSubview(addNewProject)
-		addNewProject.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -300).isActive = true
+		addNewProject.bottomAnchor.constraint(equalTo: color8.bottomAnchor, constant: 100).isActive = true
 		addNewProject.widthAnchor.constraint(equalToConstant: 300).isActive = true
 		addNewProject.heightAnchor.constraint(equalToConstant: 50).isActive = true
 		addNewProject.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
 	}
 	
+}
+
+
+extension UIViewController {
+	func hideKeyboardWhenTappedAround() {
+		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+		tap.cancelsTouchesInView = false
+		view.addGestureRecognizer(tap)
+	}
+	
+	@objc func dismissKeyboard() {
+		view.endEditing(true)
+	}
 }

@@ -65,6 +65,7 @@ class ProjectListTVC: UITableViewController, CreateProjectViewControllerDelegate
 		cell.projectName.text = projects.name
 		cell.colorProject.backgroundColor = UIColor(red: CGFloat(projects.red), green: CGFloat(projects.green), blue: CGFloat(projects.blue), alpha: 1)
 		cell.totalTime.text = "Задач: \(projects.tasksCount!)"
+		cell.selectionStyle = .none
 		return cell
 	}
 	

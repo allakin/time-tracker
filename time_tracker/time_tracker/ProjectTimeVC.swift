@@ -60,14 +60,6 @@ class ProjectTimeVC: UIViewController {
 	
 	@objc func startTimer(t: Timer) {
 		sec += 1
-//		if sec == 59 {
-//			min += 1
-//		} else if min == 60 {
-//			hrs += 1
-//			sec = 0
-//			min = 0
-//		}
-//		timeCount.text = String(format: "%02d : %02d : %02d", self.hrs, self.min, self.sec)
 		updateUI()
 	}
 	
@@ -114,12 +106,6 @@ class ProjectTimeVC: UIViewController {
 	}
 	
 	private func updateUI() {
-//		var seconds: Int
-//		var minutes: Int
-//		var hours: Int
-//		hrs = time/(60*60)
-//		min = (time/60) % 60
-//		sec = time % 60
 		if sec == 60 {
 			min += 1
 			sec = 0
@@ -128,10 +114,6 @@ class ProjectTimeVC: UIViewController {
 			min = 0
 			hrs += 1
 		}
-		
-//		let hoursString = hrs > 9 ? "\(hrs)" : "0\(hrs)"
-//		let minutesString = min > 9 ? "\(min)" : "0\(min)"
-//		let secondsString = sec > 9 ? "\(sec)" : "0\(sec)"
 		
 		timeCount.text = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
 		timeFinal = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)

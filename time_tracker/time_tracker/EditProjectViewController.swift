@@ -158,6 +158,7 @@ class EditProjectViewController: UIViewController {
 		super.viewDidLoad()
 		view.backgroundColor = .white
 		setingUI()
+		hideKeyboardWhenTappedAround()
 	}
 	
 	@objc private func color1Clicked() {
@@ -314,7 +315,7 @@ class EditProjectViewController: UIViewController {
 		color8.widthAnchor.constraint(equalToConstant: 20).isActive = true
 		color8.heightAnchor.constraint(equalToConstant: 20).isActive = true
 		view.addSubview(addNewProject)
-		addNewProject.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -300).isActive = true
+		addNewProject.bottomAnchor.constraint(equalTo: color8.bottomAnchor, constant: 100).isActive = true
 		addNewProject.widthAnchor.constraint(equalToConstant: 300).isActive = true
 		addNewProject.heightAnchor.constraint(equalToConstant: 50).isActive = true
 		addNewProject.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true

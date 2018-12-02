@@ -39,6 +39,7 @@ class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 		lastTasks.rowHeight = UITableView.automaticDimension
 		self.lastTasks.estimatedRowHeight = 44
 		self.lastTasks.rowHeight = UITableView.automaticDimension
+		hideKeyboardWhenTappedAround()
 	}
 	
 	func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -50,6 +51,7 @@ class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 		let tasks = taskList[indexPath.row]
 		cell.taskName.text = tasks.name
 		cell.taskTime.text = tasks.time
+		cell.selectionStyle = .none
 		return cell
 	}
 	
