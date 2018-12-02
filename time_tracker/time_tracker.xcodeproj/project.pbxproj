@@ -1,0 +1,411 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E9657C9E21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E9657C9C21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodeld */; };
+		E9657CA021A4885200B2D6EE /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9657C9F21A4885200B2D6EE /* CoreDataManager.swift */; };
+		E989972A21970C15003E77C7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989972921970C15003E77C7 /* AppDelegate.swift */; };
+		E989972F21970C15003E77C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E989972D21970C15003E77C7 /* Main.storyboard */; };
+		E989973121970C17003E77C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E989973021970C17003E77C7 /* Assets.xcassets */; };
+		E989973421970C17003E77C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E989973221970C17003E77C7 /* LaunchScreen.storyboard */; };
+		E989973C219856EA003E77C7 /* ProjectListTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989973B219856EA003E77C7 /* ProjectListTVC.swift */; };
+		E989973F21985733003E77C7 /* ProjectListTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E989973D21985733003E77C7 /* ProjectListTVCell.swift */; };
+		E989974021985733003E77C7 /* ProjectListTVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E989973E21985733003E77C7 /* ProjectListTVCell.xib */; };
+		E98997422198638E003E77C7 /* CreateProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98997412198638E003E77C7 /* CreateProjectViewController.swift */; };
+		E98997442198716B003E77C7 /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98997432198716B003E77C7 /* Project.swift */; };
+		E98997462198B03D003E77C7 /* EditProjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98997452198B03D003E77C7 /* EditProjectViewController.swift */; };
+		E98997482198BDE8003E77C7 /* ProjectTimeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E98997472198BDE8003E77C7 /* ProjectTimeVC.swift */; };
+		E989974A219B68CF003E77C7 /* CreateNewTaskVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9899749219B68CF003E77C7 /* CreateNewTaskVC.swift */; };
+		E989974E219DFCAE003E77C7 /* SFMono-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E989974B219DFC99003E77C7 /* SFMono-Bold.otf */; };
+		E989974F219DFCB1003E77C7 /* SFMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E989974C219DFC99003E77C7 /* SFMono-Regular.otf */; };
+		E9899750219DFCB3003E77C7 /* SFMono-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E989974D219DFC99003E77C7 /* SFMono-Semibold.otf */; };
+		E9D05AF621ADCAEB00DF1CBF /* CreateNewTaskTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D05AF421ADCAEB00DF1CBF /* CreateNewTaskTVC.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		E9657C9D21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = time_trackerDataModel.xcdatamodel; sourceTree = "<group>"; };
+		E9657C9F21A4885200B2D6EE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		E989972621970C15003E77C7 /* time_tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = time_tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E989972921970C15003E77C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		E989972E21970C15003E77C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E989973021970C17003E77C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E989973321970C17003E77C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E989973521970C17003E77C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E989973B219856EA003E77C7 /* ProjectListTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListTVC.swift; sourceTree = "<group>"; };
+		E989973D21985733003E77C7 /* ProjectListTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectListTVCell.swift; sourceTree = "<group>"; };
+		E989973E21985733003E77C7 /* ProjectListTVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectListTVCell.xib; sourceTree = "<group>"; };
+		E98997412198638E003E77C7 /* CreateProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateProjectViewController.swift; sourceTree = "<group>"; };
+		E98997432198716B003E77C7 /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		E98997452198B03D003E77C7 /* EditProjectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProjectViewController.swift; sourceTree = "<group>"; };
+		E98997472198BDE8003E77C7 /* ProjectTimeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTimeVC.swift; sourceTree = "<group>"; };
+		E9899749219B68CF003E77C7 /* CreateNewTaskVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTaskVC.swift; sourceTree = "<group>"; };
+		E989974B219DFC99003E77C7 /* SFMono-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Bold.otf"; sourceTree = "<group>"; };
+		E989974C219DFC99003E77C7 /* SFMono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Regular.otf"; sourceTree = "<group>"; };
+		E989974D219DFC99003E77C7 /* SFMono-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Semibold.otf"; sourceTree = "<group>"; };
+		E9D05AF421ADCAEB00DF1CBF /* CreateNewTaskTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTaskTVC.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E989972321970C15003E77C7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E989971D21970C15003E77C7 = {
+			isa = PBXGroup;
+			children = (
+				E989972821970C15003E77C7 /* time_tracker */,
+				E989972721970C15003E77C7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E989972721970C15003E77C7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E989972621970C15003E77C7 /* time_tracker.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E989972821970C15003E77C7 /* time_tracker */ = {
+			isa = PBXGroup;
+			children = (
+				E989974B219DFC99003E77C7 /* SFMono-Bold.otf */,
+				E989974C219DFC99003E77C7 /* SFMono-Regular.otf */,
+				E989974D219DFC99003E77C7 /* SFMono-Semibold.otf */,
+				E989972921970C15003E77C7 /* AppDelegate.swift */,
+				E989972D21970C15003E77C7 /* Main.storyboard */,
+				E989973021970C17003E77C7 /* Assets.xcassets */,
+				E989973221970C17003E77C7 /* LaunchScreen.storyboard */,
+				E989973521970C17003E77C7 /* Info.plist */,
+				E989973B219856EA003E77C7 /* ProjectListTVC.swift */,
+				E989973D21985733003E77C7 /* ProjectListTVCell.swift */,
+				E989973E21985733003E77C7 /* ProjectListTVCell.xib */,
+				E98997412198638E003E77C7 /* CreateProjectViewController.swift */,
+				E98997432198716B003E77C7 /* Project.swift */,
+				E98997452198B03D003E77C7 /* EditProjectViewController.swift */,
+				E98997472198BDE8003E77C7 /* ProjectTimeVC.swift */,
+				E9899749219B68CF003E77C7 /* CreateNewTaskVC.swift */,
+				E9657C9C21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodeld */,
+				E9657C9F21A4885200B2D6EE /* CoreDataManager.swift */,
+				E9D05AF421ADCAEB00DF1CBF /* CreateNewTaskTVC.swift */,
+			);
+			path = time_tracker;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E989972521970C15003E77C7 /* time_tracker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E989973821970C17003E77C7 /* Build configuration list for PBXNativeTarget "time_tracker" */;
+			buildPhases = (
+				E989972221970C15003E77C7 /* Sources */,
+				E989972321970C15003E77C7 /* Frameworks */,
+				E989972421970C15003E77C7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = time_tracker;
+			productName = time_tracker;
+			productReference = E989972621970C15003E77C7 /* time_tracker.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E989971E21970C15003E77C7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1010;
+				LastUpgradeCheck = 1010;
+				ORGANIZATIONNAME = Pavel;
+				TargetAttributes = {
+					E989972521970C15003E77C7 = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 0;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = E989972121970C15003E77C7 /* Build configuration list for PBXProject "time_tracker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E989971D21970C15003E77C7;
+			productRefGroup = E989972721970C15003E77C7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E989972521970C15003E77C7 /* time_tracker */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E989972421970C15003E77C7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E989974F219DFCB1003E77C7 /* SFMono-Regular.otf in Resources */,
+				E989974E219DFCAE003E77C7 /* SFMono-Bold.otf in Resources */,
+				E989973421970C17003E77C7 /* LaunchScreen.storyboard in Resources */,
+				E989973121970C17003E77C7 /* Assets.xcassets in Resources */,
+				E989972F21970C15003E77C7 /* Main.storyboard in Resources */,
+				E9899750219DFCB3003E77C7 /* SFMono-Semibold.otf in Resources */,
+				E989974021985733003E77C7 /* ProjectListTVCell.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E989972221970C15003E77C7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E989972A21970C15003E77C7 /* AppDelegate.swift in Sources */,
+				E989973F21985733003E77C7 /* ProjectListTVCell.swift in Sources */,
+				E9657C9E21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodeld in Sources */,
+				E9D05AF621ADCAEB00DF1CBF /* CreateNewTaskTVC.swift in Sources */,
+				E989974A219B68CF003E77C7 /* CreateNewTaskVC.swift in Sources */,
+				E98997422198638E003E77C7 /* CreateProjectViewController.swift in Sources */,
+				E98997442198716B003E77C7 /* Project.swift in Sources */,
+				E98997462198B03D003E77C7 /* EditProjectViewController.swift in Sources */,
+				E98997482198BDE8003E77C7 /* ProjectTimeVC.swift in Sources */,
+				E9657CA021A4885200B2D6EE /* CoreDataManager.swift in Sources */,
+				E989973C219856EA003E77C7 /* ProjectListTVC.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		E989972D21970C15003E77C7 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E989972E21970C15003E77C7 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E989973221970C17003E77C7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E989973321970C17003E77C7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E989973621970C17003E77C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		E989973721970C17003E77C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E989973921970C17003E77C7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9T23CDVWRT;
+				INFOPLIST_FILE = time_tracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pavel-developer.time-tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E989973A21970C17003E77C7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 9T23CDVWRT;
+				INFOPLIST_FILE = time_tracker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "pavel-developer.time-tracker";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E989972121970C15003E77C7 /* Build configuration list for PBXProject "time_tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E989973621970C17003E77C7 /* Debug */,
+				E989973721970C17003E77C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E989973821970C17003E77C7 /* Build configuration list for PBXNativeTarget "time_tracker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E989973921970C17003E77C7 /* Debug */,
+				E989973A21970C17003E77C7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		E9657C9C21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E9657C9D21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodel */,
+			);
+			currentVersion = E9657C9D21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodel */;
+			path = time_trackerDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = E989971E21970C15003E77C7 /* Project object */;
+}
