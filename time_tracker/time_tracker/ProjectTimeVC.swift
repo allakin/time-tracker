@@ -107,8 +107,8 @@ class ProjectTimeVC: UIViewController {
 	
 	private func updateUI() {
 		if sec == 60 {
-			min += 1
 			sec = 0
+			min += 1
 		} else if min == 60 {
 			sec = 0
 			min = 0
