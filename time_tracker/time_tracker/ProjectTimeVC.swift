@@ -83,7 +83,6 @@ class ProjectTimeVC: UIViewController {
 		sec += secs
 		timeCount.text = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
 		runTimer()
-		
 	}
 	
 	@IBAction func cancelScreen(_ sender: Any) {
@@ -93,10 +92,34 @@ class ProjectTimeVC: UIViewController {
 	@IBAction func pauseButtonTaped(_ sender: Any) {
 		if self.resumeTapped == false {
 			timer.invalidate()
+			editTimeCount()
+			timeCount.text = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
 			startButton.isHidden = false
 			pauseButton.isHidden = true
 		}
 		print("pause")
+	}
+	
+	func editTimeCount() {
+		if sec > 60 && sec < 120 {
+			sec = sec % 60
+			min = min + 1
+		}
+		
+		if sec > 120 && sec < 180 {
+			sec = sec % 60
+			min = min + 2
+		}
+		
+		if min > 60 && min < 120 {
+			min = min % 60
+			hrs = hrs + 1
+		}
+		
+		if min > 120 && min < 180 {
+			min = min % 60
+			hrs = hrs + 2
+		}
 	}
 	
 	func removeSavedDate() {
@@ -114,7 +137,7 @@ class ProjectTimeVC: UIViewController {
 			min = 0
 			hrs += 1
 		}
-		
+		editTimeCount()
 		timeCount.text = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
 		timeFinal = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
 		
