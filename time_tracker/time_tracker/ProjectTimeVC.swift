@@ -101,24 +101,37 @@ class ProjectTimeVC: UIViewController {
 	}
 	
 	func editTimeCount() {
-		if sec > 60 && sec < 120 {
+		switch sec {
+		case 60...120:
 			sec = sec % 60
 			min = min + 1
-		}
-		
-		if sec > 120 && sec < 180 {
+		case 120...180:
 			sec = sec % 60
 			min = min + 2
+		case 180...240:
+			sec = sec % 60
+			min = min + 3
+		case 240...300:
+			sec = sec % 60
+			min = min + 4
+		default:
+			break
 		}
-		
-		if min > 60 && min < 120 {
+		switch min {
+		case 60...120:
 			min = min % 60
 			hrs = hrs + 1
-		}
-		
-		if min > 120 && min < 180 {
+		case 120...180:
 			min = min % 60
 			hrs = hrs + 2
+		case 180...240:
+			min = min % 60
+			hrs = hrs + 3
+		case 240...300:
+			min = min % 60
+			hrs = hrs + 4
+		default:
+			break
 		}
 	}
 	
@@ -165,5 +178,5 @@ class ProjectTimeVC: UIViewController {
 	func countString(time: Int) -> String {
 		return time > 9 ? "\(time)" : "0\(time)"
 	}
-	
+
 }

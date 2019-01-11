@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "E989972521970C15003E77C7"
-               BuildableName = "time_tracker.app"
-               BlueprintName = "time_tracker"
+               BuildableName = "Mebo Timer.app"
+               BlueprintName = "Mebo Timer"
                ReferencedContainer = "container:time_tracker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -33,8 +33,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E989972521970C15003E77C7"
-            BuildableName = "time_tracker.app"
-            BlueprintName = "time_tracker"
+            BuildableName = "Mebo Timer.app"
+            BlueprintName = "Mebo Timer"
             ReferencedContainer = "container:time_tracker.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -56,8 +56,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E989972521970C15003E77C7"
-            BuildableName = "time_tracker.app"
-            BlueprintName = "time_tracker"
+            BuildableName = "Mebo Timer.app"
+            BlueprintName = "Mebo Timer"
             ReferencedContainer = "container:time_tracker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,8 +75,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "E989972521970C15003E77C7"
-            BuildableName = "time_tracker.app"
-            BlueprintName = "time_tracker"
+            BuildableName = "Mebo Timer.app"
+            BlueprintName = "Mebo Timer"
             ReferencedContainer = "container:time_tracker.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

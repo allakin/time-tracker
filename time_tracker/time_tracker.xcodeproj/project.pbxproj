@@ -30,7 +30,7 @@
 /* Begin PBXFileReference section */
 		E9657C9D21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = time_trackerDataModel.xcdatamodel; sourceTree = "<group>"; };
 		E9657C9F21A4885200B2D6EE /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
-		E989972621970C15003E77C7 /* time_tracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = time_tracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E989972621970C15003E77C7 /* Mebo Timer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Mebo Timer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E989972921970C15003E77C7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E989972E21970C15003E77C7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E989973021970C17003E77C7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		E989972721970C15003E77C7 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				E989972621970C15003E77C7 /* time_tracker.app */,
+				E989972621970C15003E77C7 /* Mebo Timer.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -106,9 +106,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		E989972521970C15003E77C7 /* time_tracker */ = {
+		E989972521970C15003E77C7 /* Mebo Timer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = E989973821970C17003E77C7 /* Build configuration list for PBXNativeTarget "time_tracker" */;
+			buildConfigurationList = E989973821970C17003E77C7 /* Build configuration list for PBXNativeTarget "Mebo Timer" */;
 			buildPhases = (
 				E989972221970C15003E77C7 /* Sources */,
 				E989972321970C15003E77C7 /* Frameworks */,
@@ -118,9 +118,9 @@
 			);
 			dependencies = (
 			);
-			name = time_tracker;
+			name = "Mebo Timer";
 			productName = time_tracker;
-			productReference = E989972621970C15003E77C7 /* time_tracker.app */;
+			productReference = E989972621970C15003E77C7 /* Mebo Timer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -156,7 +156,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				E989972521970C15003E77C7 /* time_tracker */,
+				E989972521970C15003E77C7 /* Mebo Timer */,
 			);
 		};
 /* End PBXProject section */
@@ -346,7 +346,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "pavel-developer.time-tracker";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pavel-developer.time-tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -364,7 +364,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "pavel-developer.time-tracker";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pavel-developer.time-tracker";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -383,7 +383,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		E989973821970C17003E77C7 /* Build configuration list for PBXNativeTarget "time_tracker" */ = {
+		E989973821970C17003E77C7 /* Build configuration list for PBXNativeTarget "Mebo Timer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E989973921970C17003E77C7 /* Debug */,
