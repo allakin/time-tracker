@@ -42,14 +42,15 @@ class ProjectTimeVC: UIViewController {
 	}
 	
 	func runTimer() {
+		startButton.isHidden = true
+		pauseButton.isHidden = false
 		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTimer(t:)), userInfo: nil, repeats: true)
 	}
 	
 	@IBAction func startPauseButtonTaped(_ sender: Any) {
 		runTimer()
-		startButton.isHidden = true
-		pauseButton.isHidden = false
-		print("start")
+		UserDefaults.standard.removeObject(forKey: "stateTimer")
+		UserDefaults.standard.set(false, forKey: "stateTimer")
 	}
 	
 	@objc func pauseWhenBackground(noti: Notification) {
@@ -65,8 +66,9 @@ class ProjectTimeVC: UIViewController {
 	
 	@objc func willEnterForeground(noti: Notification) {
 		if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
-			(diffHrs, diffMins, diffSecs) = ProjectTimeVC.getTimeDifference(startDate: savedDate)
-			
+			if UserDefaults.standard.objectIsForced(forKey: "stateTimer") == true {
+				(diffHrs, diffMins, diffSecs) = ProjectTimeVC.getTimeDifference(startDate: savedDate)
+			}
 			refresh(hours: diffHrs, mins: diffMins, secs: diffSecs)
 		}
 	}
@@ -82,7 +84,9 @@ class ProjectTimeVC: UIViewController {
 		min += mins
 		sec += secs
 		timeCount.text = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
-		runTimer()
+		if UserDefaults.standard.objectIsForced(forKey: "stateTimer") == true {
+			runTimer()
+		}
 	}
 	
 	@IBAction func cancelScreen(_ sender: Any) {
@@ -96,8 +100,9 @@ class ProjectTimeVC: UIViewController {
 			timeCount.text = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
 			startButton.isHidden = false
 			pauseButton.isHidden = true
+			UserDefaults.standard.removeObject(forKey: "stateTimer")
+			UserDefaults.standard.set(true, forKey: "stateTimer")
 		}
-		print("pause")
 	}
 	
 	func editTimeCount() {
@@ -178,5 +183,5 @@ class ProjectTimeVC: UIViewController {
 	func countString(time: Int) -> String {
 		return time > 9 ? "\(time)" : "0\(time)"
 	}
-
+	
 }
