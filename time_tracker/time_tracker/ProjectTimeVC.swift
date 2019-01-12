@@ -37,6 +37,7 @@ class ProjectTimeVC: UIViewController {
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		taskName.text = task?.name
+		timeCount.text = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
 		NotificationCenter.default.addObserver(self, selector: #selector(pauseWhenBackground(noti:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
 		NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground(noti:)), name: UIApplication.willEnterForegroundNotification, object: nil)
 	}
@@ -90,7 +91,9 @@ class ProjectTimeVC: UIViewController {
 	}
 	
 	@IBAction func cancelScreen(_ sender: Any) {
-		dismiss(animated: true, completion: nil)
+		dismiss(animated: true) {
+			self.helpSaveTime()
+		}
 	}
 	
 	@IBAction func pauseButtonTaped(_ sender: Any) {
@@ -163,17 +166,24 @@ class ProjectTimeVC: UIViewController {
 	
 	@IBAction func stopButtonTaped(_ sender: Any) {
 		dismiss(animated: true) {
-			self.timer.invalidate()
-			self.time = 0
-			self.timeFinal != "" ? self.saveTime(time: self.timeFinal) : self.saveTime(time: "00:00:00")
-			self.delegate.reloadTime(time: self.task!)
+			self.helpSaveTime()
 		}
 		print("stoped")
 	}
 	
-	func saveTime(time: String) {
+	func helpSaveTime() {
+		timer.invalidate()
+		time = 0
+		timeFinal != "" ? self.saveTime(hours: hrs, minutes: min, seconds: sec) : self.saveTime(hours: 0, minutes: 0, seconds: 0)
+		delegate.reloadTime(time: self.task!)
+	}
+	
+	func saveTime(hours: Int, minutes: Int, seconds: Int) {
 		let context = CoreDataManager.shared.persistentContainer.viewContext
-		task?.time = time
+//		task?.time = time
+		task?.hours = Int64(hours)
+		task?.minutes = Int64(minutes)
+		task?.seconds = Int64(seconds)
 		do {
 			try context.save()
 		} catch {

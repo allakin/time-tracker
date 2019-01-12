@@ -35,6 +35,7 @@ class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 		super.viewDidLoad()
 		lastTasks.delegate = self
 		lastTasks.dataSource = self
+		navigationItem.title = tasksNameList?.name
 		fetchRequest()
 		lastTasks.rowHeight = UITableView.automaticDimension
 		self.lastTasks.estimatedRowHeight = 44
@@ -50,9 +51,13 @@ class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 		let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CreateNewTaskTVC
 		let tasks = taskList[indexPath.row]
 		cell.taskName.text = tasks.name
-		cell.taskTime.text = tasks.time
+		cell.taskTime.text = countString(time: tasks.hours) + ":" + countString(time: tasks.minutes) + ":" + countString(time: tasks.seconds)
 		cell.selectionStyle = .none
 		return cell
+	}
+	
+	func countString(time: Int64) -> String {
+		return Int(time) > 9 ? "\(Int(time))" : "0\(Int(time))"
 	}
 	
 	@IBAction func newTaskButton(_ sender: Any) {
@@ -92,6 +97,9 @@ class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 			if let indexPath = lastTasks.indexPathForSelectedRow {
 				let destionationController = segue.destination as! ProjectTimeVC
 				destionationController.task = taskList[indexPath.row]
+				destionationController.hrs = Int(taskList[indexPath.row].hours)
+				destionationController.min = Int(taskList[indexPath.row].minutes)
+				destionationController.sec = Int(taskList[indexPath.row].seconds)
 				destionationController.delegate = self
 			}
 		}
