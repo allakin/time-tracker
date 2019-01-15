@@ -25,6 +25,8 @@
 		E989974F219DFCB1003E77C7 /* SFMono-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = E989974C219DFC99003E77C7 /* SFMono-Regular.otf */; };
 		E9899750219DFCB3003E77C7 /* SFMono-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = E989974D219DFC99003E77C7 /* SFMono-Semibold.otf */; };
 		E9D05AF621ADCAEB00DF1CBF /* CreateNewTaskTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9D05AF421ADCAEB00DF1CBF /* CreateNewTaskTVC.swift */; };
+		E9E7CEB821EA0468008437DC /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E7CEB621EA0467008437DC /* Crashlytics.framework */; };
+		E9E7CEB921EA0468008437DC /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E7CEB721EA0467008437DC /* Fabric.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +50,8 @@
 		E989974C219DFC99003E77C7 /* SFMono-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Regular.otf"; sourceTree = "<group>"; };
 		E989974D219DFC99003E77C7 /* SFMono-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFMono-Semibold.otf"; sourceTree = "<group>"; };
 		E9D05AF421ADCAEB00DF1CBF /* CreateNewTaskTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNewTaskTVC.swift; sourceTree = "<group>"; };
+		E9E7CEB621EA0467008437DC /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = SOURCE_ROOT; };
+		E9E7CEB721EA0467008437DC /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +59,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9E7CEB821EA0468008437DC /* Crashlytics.framework in Frameworks */,
+				E9E7CEB921EA0468008437DC /* Fabric.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +105,8 @@
 				E9657C9C21A4883B00B2D6EE /* time_trackerDataModel.xcdatamodeld */,
 				E9657C9F21A4885200B2D6EE /* CoreDataManager.swift */,
 				E9D05AF421ADCAEB00DF1CBF /* CreateNewTaskTVC.swift */,
+				E9E7CEB621EA0467008437DC /* Crashlytics.framework */,
+				E9E7CEB721EA0467008437DC /* Fabric.framework */,
 			);
 			path = time_tracker;
 			sourceTree = "<group>";
@@ -113,6 +121,7 @@
 				E989972221970C15003E77C7 /* Sources */,
 				E989972321970C15003E77C7 /* Frameworks */,
 				E989972421970C15003E77C7 /* Resources */,
+				E9E7CEB521EA03BD008437DC /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -177,6 +186,26 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E9E7CEB521EA03BD008437DC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n./Fabric.framework/run 3846dad9e2109c2b7c58943f718cc989f53145a5 ee2422f07e9651b653af56d3da39fc908799dabb6aa0f46bb960ee094032e952\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E989972221970C15003E77C7 /* Sources */ = {
@@ -341,7 +370,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9T23CDVWRT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = time_tracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -359,7 +393,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9T23CDVWRT;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = time_tracker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

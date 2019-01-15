@@ -31,6 +31,7 @@ class ProjectTimeVC: UIViewController {
 	var diffSecs = 0
 	var time = 0
 	var timeFinal = ""
+	var buttonCount = 0
 	var delegate:	ProjectTimeVCDelegate!
 	var resumeTapped = false
 	
@@ -38,46 +39,63 @@ class ProjectTimeVC: UIViewController {
 		super.viewDidLoad()
 		taskName.text = task?.name
 		timeCount.text = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
-		NotificationCenter.default.addObserver(self, selector: #selector(pauseWhenBackground(noti:)), name: UIApplication.didEnterBackgroundNotification, object: nil)
-		NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground(noti:)), name: UIApplication.willEnterForegroundNotification, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(pauseWhenBackground), name: UIApplication.didEnterBackgroundNotification, object: nil)
+		NotificationCenter.default.addObserver(self, selector: #selector(willEnterForeground), name: UIApplication.willEnterForegroundNotification, object: nil)
 	}
 	
 	func runTimer() {
 		startButton.isHidden = true
 		pauseButton.isHidden = false
-		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTimer(t:)), userInfo: nil, repeats: true)
+		timer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(startTimer), userInfo: nil, repeats: true)
 	}
 	
 	@IBAction func startPauseButtonTaped(_ sender: Any) {
+//		UserDefaults.standard.set(true, forKey: "stateTimer")
+		buttonCount = 1
 		runTimer()
-		UserDefaults.standard.removeObject(forKey: "stateTimer")
-		UserDefaults.standard.set(false, forKey: "stateTimer")
 	}
 	
-	@objc func pauseWhenBackground(noti: Notification) {
+	@objc func pauseWhenBackground() {
 		self.timer.invalidate()
 		let shared = UserDefaults.standard
 		shared.set(Date(), forKey: "savedTime")
 	}
 	
-	@objc func startTimer(t: Timer) {
+	@objc func startTimer() {
 		sec += 1
 		updateUI()
 	}
 	
-	@objc func willEnterForeground(noti: Notification) {
-		if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
-			if UserDefaults.standard.objectIsForced(forKey: "stateTimer") == true {
-				(diffHrs, diffMins, diffSecs) = ProjectTimeVC.getTimeDifference(startDate: savedDate)
+	private func updateUI() {
+		if sec == 60 {
+			sec = 0
+			min += 1
+		} else if min == 60 {
+			sec = 0
+			min = 0
+			hrs += 1
+		}
+		editTimeCount()
+		timeCount.text = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
+		timeFinal = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
+	}
+	
+	@objc func willEnterForeground() {
+		if buttonCount == 1 {
+			if let savedDate = UserDefaults.standard.object(forKey: "savedTime") as? Date {
+				let time = getTimeDifference(startDate: savedDate)
+				refresh(hours: time.0, mins: time.1, secs: time.2)
 			}
-			refresh(hours: diffHrs, mins: diffMins, secs: diffSecs)
 		}
 	}
 	
-	static func getTimeDifference(startDate: Date) -> (Int, Int, Int) {
+	func getTimeDifference(startDate: Date) -> (Int, Int, Int) {
 		let calendar = Calendar.current
 		let components = calendar.dateComponents([.hour, .minute, .second], from: startDate, to: Date())
-		return(components.hour!, components.minute!, components.second!)
+		diffHrs = components.hour!
+		diffMins = components.minute!
+		diffSecs = components.second!
+		return(diffHrs, diffMins, diffSecs)
 	}
 	
 	func refresh (hours: Int, mins: Int, secs: Int) {
@@ -85,9 +103,7 @@ class ProjectTimeVC: UIViewController {
 		min += mins
 		sec += secs
 		timeCount.text = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
-		if UserDefaults.standard.objectIsForced(forKey: "stateTimer") == true {
-			runTimer()
-		}
+		runTimer()
 	}
 	
 	@IBAction func cancelScreen(_ sender: Any) {
@@ -97,14 +113,15 @@ class ProjectTimeVC: UIViewController {
 	}
 	
 	@IBAction func pauseButtonTaped(_ sender: Any) {
+//		UserDefaults.standard.removeObject(forKey: "stateTimer")
+//		UserDefaults.standard.set(false, forKey: "stateTimer")
 		if self.resumeTapped == false {
 			timer.invalidate()
 			editTimeCount()
 			timeCount.text = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
 			startButton.isHidden = false
 			pauseButton.isHidden = true
-			UserDefaults.standard.removeObject(forKey: "stateTimer")
-			UserDefaults.standard.set(true, forKey: "stateTimer")
+			buttonCount = 2
 		}
 	}
 	
@@ -147,21 +164,6 @@ class ProjectTimeVC: UIViewController {
 		if (UserDefaults.standard.object(forKey: "savedTime") as? Date) != nil {
 			UserDefaults.standard.removeObject(forKey: "savedTime")
 		}
-	}
-	
-	private func updateUI() {
-		if sec == 60 {
-			sec = 0
-			min += 1
-		} else if min == 60 {
-			sec = 0
-			min = 0
-			hrs += 1
-		}
-		editTimeCount()
-		timeCount.text = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
-		timeFinal = countString(time: hrs) + ":" + countString(time: min) + ":" + countString(time: sec)
-		
 	}
 	
 	@IBAction func stopButtonTaped(_ sender: Any) {
