@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18A391" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18C54" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="ProjectsList" representedClassName="ProjectsList" syncable="YES" codeGenerationType="class">
         <attribute name="blue" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="green" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
@@ -9,12 +9,15 @@
         <relationship name="tasksList" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="TasksList" inverseName="projectsList" inverseEntity="TasksList" syncable="YES"/>
     </entity>
     <entity name="TasksList" representedClassName="TasksList" syncable="YES" codeGenerationType="class">
+        <attribute name="hours" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="minutes" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="seconds" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="projectsList" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ProjectsList" inverseName="tasksList" inverseEntity="ProjectsList" syncable="YES"/>
     </entity>
     <elements>
         <element name="ProjectsList" positionX="-63" positionY="-18" width="128" height="135"/>
-        <element name="TasksList" positionX="171.08984375" positionY="27.37890625" width="128" height="90"/>
+        <element name="TasksList" positionX="171.08984375" positionY="27.37890625" width="128" height="135"/>
     </elements>
 </model>
