@@ -176,7 +176,7 @@ class ProjectTimeVC: UIViewController {
 	func helpSaveTime() {
 		timer.invalidate()
 		time = 0
-		timeFinal != "" ? self.saveTime(hours: hrs, minutes: min, seconds: sec) : self.saveTime(hours: 0, minutes: 0, seconds: 0)
+		saveTime(hours: hrs, minutes: min, seconds: sec)
 		delegate.reloadTime(time: self.task!)
 	}
 	
