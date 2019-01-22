@@ -78,6 +78,9 @@ class CreateNewTaskVC: UIViewController, UITableViewDelegate, UITableViewDataSou
 	func fetchRequest() {
 		guard let project = tasksNameList?.tasksList?.allObjects as? [TasksList]  else {return}
 		taskList = project
+		taskList.sort { (id1, id2) -> Bool in
+			return id1.name! < id2.name!
+		}
 		lastTasks.reloadData()
 	}
 	

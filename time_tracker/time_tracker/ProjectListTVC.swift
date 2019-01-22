@@ -30,6 +30,9 @@ class ProjectListTVC: UITableViewController, CreateProjectViewControllerDelegate
 	
 	func addNewProject(name: ProjectsList) {
 		projectListArray.append(name)
+		projectListArray.sort { (id1, id2) -> Bool in
+			return id1.name! < id2.name!
+		}
 		tableView.reloadData()
 	}
 	
